@@ -1,114 +1,57 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>فروشگاه نمایشی</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nemo Shop</title>
   <style>
     body {
-      font-family: Tahoma, sans-serif;
-      background-color: #f9f9f9;
       margin: 0;
-      padding: 0;
-      direction: rtl;
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f0f0;
+      color: #333;
     }
 
-    header {
-      background-color: #2196F3;
-      color: white;
-      padding: 1rem;
+    h1 {
       text-align: center;
-      font-size: 1.8rem;
+      padding: 1em;
+      color: #444;
     }
 
-    .container {
+    .shop-container {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      padding: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5em;
+      padding: 2em;
+      max-width: 1200px;
+      margin: auto;
     }
 
     .card {
-      background-color: #ffffffdd;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 1rem;
-      transition: 0.3s;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
     }
 
     .card img {
       width: 100%;
       height: 150px;
       object-fit: cover;
-      border-radius: 8px;
     }
 
-    .product-name {
-      font-weight: bold;
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-
-    .product-description {
-      color: #555;
-      font-size: 0.9rem;
-      margin: 0.3rem 0;
-    }
-
-    .product-price {
-      color: #e91e63;
-      font-weight: bold;
-      margin-top: 0.5rem;
-    }
-
-    footer {
-      background-color: #333;
-      color: white;
+    .card-content {
+      padding: 1em;
       text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
     }
-  </style>
-</head>
-<body>
 
-  <header>فروشگاه نمایشی</header>
-
-  <div class="container" id="product-container">
-    <!-- محصولات اینجا با JS اضافه می‌شوند -->
-  </div>
-
-  <footer>
-    آدرس مغازه: تهران، خیابان نمونه، کوچه ۱۲، پلاک ۸
-  </footer>
-
-  <script>
-    const container = document.getElementById("product-container");
-
-    const products = Array.from({ length: 15 }, (_, i) => ({
-      name: کالای شماره ${i + 1},
-      description: توضیح مختصر درباره کالای شماره ${i + 1}.,
-      price: ${100 + i * 10} هزار تومان,
-      image: https://via.placeholder.com/250x150?text=کالا+${i + 1},
-      bgColor: hsl(${i * 24}, 80%, 95%)
-    }));
-
-    products.forEach(product => {
-      const card = document.createElement("div");
-      card.className = "card";
-      card.style.backgroundColor = product.bgColor;
-      card.innerHTML = `
-        <img src="${product.image}" alt="${product.name}">
-        <div class="product-name">${product.name}</div>
-        <div class="product-description">${product.description}</div>
-        <div class="product-price">${product.price}</div>
-      `;
-      container.appendChild(card);
-    });
-  </script>
-
-</body>
-</html>
+    .card-title {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin:
